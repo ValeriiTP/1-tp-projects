@@ -4,6 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Strona</title>
+    <script type="text/javascript">
+
+        function odliczanie()
+        {
+        var dzisiaj = new Date();
+        var dzien = dzisiaj.getDate();
+        var miesiac = dzisiaj.getMonth();
+        var rok = dzisiaj.getFullYear();       
+        var godzina = dzisiaj.getHours();
+        var minuta = dzisiaj.getMinutes();
+        var sekunda = dzisiaj.getSeconds();
+
+        document.getElementById("zegar").innerHTML=
+        dzien + "/" + miesiac + "/" + rok + " | " + godzina + ":" + minuta + ":" + sekunda;
+        setTimeout("odliczanie()",1000);   
+        }
+
+       
+        
+         
+        
+        
+    </script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -42,10 +65,14 @@
         h1{
             color: white;
         }
+        div{
+            color: white;
+        }
     </style>
 </head>
-<body>
+<body onload="odliczanie();">
     <h1>Staruselets Valerii 1TP</h1>
+    <h2><div id="zegar"></div></h2>
     <nav>
         <a href="https://valeriitp.github.io/1-tp-projects/1">project 1</a>
         <a href="https://valeriitp.github.io/1-tp-projects/2">project 2</a>
@@ -71,4 +98,3 @@
     </nav>
 </body>
 </html>
-

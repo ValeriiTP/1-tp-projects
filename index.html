@@ -4,36 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Strona</title>
-    <script type="text/javascript">
+    <script>
+        function odliczanie() {
+            setInterval(() => {
+                let dzisiaj = new Date();
+                let dzien = dzisiaj.getDate();
+                let miesiac = (dzisiaj.getMonth() + 1).toString().padStart(2, "0");
+                let rok = dzisiaj.getFullYear();
+                let godzina = dzisiaj.getHours().toString().padStart(2, "0");
+                let minuta = dzisiaj.getMinutes().toString().padStart(2, "0");
+                let sekunda = dzisiaj.getSeconds().toString().padStart(2, "0");
 
-        function odliczanie()
-        {
-        var dzisiaj = new Date();
-        var dzien = dzisiaj.getDate();
-        var miesiac = dzisiaj.getMonth() +1;
-        var rok = dzisiaj.getFullYear();       
-        var godzina = dzisiaj.getHours();
-        var minuta = dzisiaj.getMinutes();
-        var sekunda = dzisiaj.getSeconds();
-
-        document.getElementById("zegar").innerHTML=
-        dzien + "/"+"0" + miesiac + "/" + rok + " | " + godzina + ":" + minuta + ":" + sekunda;
-        setTimeout("odliczanie()",1000);   
+                document.getElementById("zegar").textContent = 
+                    `${dzien}/${miesiac}/${rok} | ${godzina}:${minuta}:${sekunda}`;
+            }, 1000);
         }
-
-       
-        
-         
-        
-        
     </script>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #212121; 
+            background-color: #212121;
+            color: white;
             text-align: center;
             padding: 50px;
-            position: absolut;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         nav {
@@ -42,66 +40,71 @@
 
         nav a {
             display: inline-block;
-            margin: 10px;
-            padding: 10px 0;
-            width: 150px; 
+            margin: 5px;
+            padding: 10px;
+            width: 150px;
             text-decoration: none;
-            color: white; 
+            color: white;
             background-color: #555;
             border-radius: 5px;
-            text-align: center; 
             transition: background-color 0.3s ease;
         }
 
         nav a:hover {
-            background-color: #333; 
+            background-color: #333;
         } 
 
         footer {
             margin-top: 50px;
             font-size: 14px;
             color: #777;
-        } 
-        h1{
-            color: white;
         }
-        div{
-            color: white;
+
+        h1, h2 {
+            margin-bottom: 10px;
+        }
+
+        #zegar {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body onload="odliczanie();">
-    <h1>Staruselets Valerii 1TP</h1>
-    
-    <h1>HTML+css</h1>
-    <nav>
-        <a href="https://valeriitp.github.io/1-tp-projects/1">project 1</a>
-        <a href="https://valeriitp.github.io/1-tp-projects/2">project 2</a>
-        <a href="https://valeriitp.github.io/1-tp-projects/3">project 3</a>
-        <a href="https://valeriitp.github.io/1-tp-projects/4">project 4</a>
-        <a href="https://valeriitp.github.io/1-tp-projects/5">project 5</a>
-        <a href="https://valeriitp.github.io/1-tp-projects/61">project 6</a>
-        <a href="https://valeriitp.github.io/1-tp-projects/7">project 7</a>
-        <a href="https://valeriitp.github.io/1-tp-projects/8">projekt 8</a>
-        <a href="https://valeriitp.github.io/1-tp-projects/9">projekt 9</a>
-        <a href="https://valeriitp.github.io/1-tp-projects/10"> projekt 10</a>
-        <a href="https://valeriitp.github.io/1-tp-projects/11"> projekt 11</a>
-        <a href="https://valeriitp.github.io/1-tp-projects/12"> projekt 12</a>
-        <a href="https://valeriitp.github.io/1-tp-projects/13"> projekt 13</a>
-        <a href="https://valeriitp.github.io/1-tp-projects/14"> projekt 14</a>
-        <a href="https://valeriitp.github.io/1-tp-projects/15"> projekt 15</a>
-        <a href="https://valeriitp.github.io/1-tp-projects/16"> projekt 16</a>
-        <a href="https://valeriitp.github.io/1-tp-projects/17"> projekt 17</a>
-        <a href="https://valeriitp.github.io/1-tp-projects/18"> projekt 18</a>
-        <a href="https://valeriitp.github.io/1-tp-projects/19"> projekt 19</a>
-        <a href="https://valeriitp.github.io/1-tp-projects/20"> projekt 20</a>
-        <a href="https://valeriitp.github.io/1-tp-projects/21"> projekt 21</a>
-    </nav>
-    <h1>Java script</h1>
-    <h2><div id="zegar"></div></h2>
-    <nav>
-        <a href="https://valeriitp.github.io/1-tp-projects/22"> projekt 1</a>
-        <a href="https://valeriitp.github.io/1-tp-projects/23"> projekt 2</a>
-    </nav>
+    <div class="container">
+        <h1>Staruselets Valerii 1TP</h1>
+        <h1>HTML + CSS</h1>
+        <nav>
+            <a href="https://valeriitp.github.io/1-tp-projects/1">Projekt 1</a>
+            <a href="https://valeriitp.github.io/1-tp-projects/2">Projekt 2</a>
+            <a href="https://valeriitp.github.io/1-tp-projects/3">Projekt 3</a>
+            <a href="https://valeriitp.github.io/1-tp-projects/4">Projekt 4</a>
+            <a href="https://valeriitp.github.io/1-tp-projects/5">Projekt 5</a>
+            <a href="https://valeriitp.github.io/1-tp-projects/6">Projekt 6</a>
+            <a href="https://valeriitp.github.io/1-tp-projects/7">Projekt 7</a>
+            <a href="https://valeriitp.github.io/1-tp-projects/8">Projekt 8</a>
+            <a href="https://valeriitp.github.io/1-tp-projects/9">Projekt 9</a>
+            <a href="https://valeriitp.github.io/1-tp-projects/10">Projekt 10</a>
+            <a href="https://valeriitp.github.io/1-tp-projects/11">Projekt 11</a>
+            <a href="https://valeriitp.github.io/1-tp-projects/12">Projekt 12</a>
+            <a href="https://valeriitp.github.io/1-tp-projects/13">Projekt 13</a>
+            <a href="https://valeriitp.github.io/1-tp-projects/14">Projekt 14</a>
+            <a href="https://valeriitp.github.io/1-tp-projects/15">Projekt 15</a>
+            <a href="https://valeriitp.github.io/1-tp-projects/16">Projekt 16</a>
+            <a href="https://valeriitp.github.io/1-tp-projects/17">Projekt 17</a>
+            <a href="https://valeriitp.github.io/1-tp-projects/18">Projekt 18</a>
+            <a href="https://valeriitp.github.io/1-tp-projects/19">Projekt 19</a>
+            <a href="https://valeriitp.github.io/1-tp-projects/20">Projekt 20</a>
+            <a href="https://valeriitp.github.io/1-tp-projects/21">Projekt 21</a>
+        </nav>
+
+        <h1>JavaScript</h1>
+        <h2 id="zegar"></h2>
+        <nav>
+            <a href="https://valeriitp.github.io/1-tp-projects/22">Projekt 1</a>
+            <a href="https://valeriitp.github.io/1-tp-projects/23">Projekt 2</a>
+        </nav>
+    </div>
 </body>
 </html>
